@@ -1,1 +1,27 @@
 /*style.css*/
+*{
+    border: 1px solid blue;
+}
+
+body{
+    display:grid;
+    height: 100vh;
+}
+
+#calc{
+    display: flex;
+    flex: 0 1 50%;
+}
+
+#buttonCont{
+    height:300px;
+    width: 300px;
+    
+    display: grid;
+    grid-template-columns:auto auto auto;
+    gap:5px;
+}
+
+#buttonCont button{
+    display:block;
+}
