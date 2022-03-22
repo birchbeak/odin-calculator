@@ -108,12 +108,11 @@ function numberProcess(num){
 
     switch(num) {
         case '.':
-            console.log(!/./.test(number1));
-            if(!operator && !/./.test(number1)) {
+            if(!operator && !/\./.test(number1)) {
                 number1+= num;
                 screenMessage+= num;
             }
-            else if(operator !== null && !/./.test(number2)){
+            else if(operator !== null && !/\./.test(number2)){
                 number2+= num;
                 screenMessage+= num;
             }
@@ -133,13 +132,12 @@ function numberProcess(num){
 
 //sets up operators in logic and on calculator screen
 function operatorProcess(op){
-
-    if(operator===null){ 
+    console.log(number1);
+    if(operator===null && number1!=='' && number1 !=='.'){ 
         operator=op;
         screenMessage+=op;
     }
-    else if (number2 !== ''){
-        
+    else if (number2 !== '' && number2!=='.'){
         evaluate();
         screenMessage= number1+op;
         operator=op;

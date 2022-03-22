@@ -23,4 +23,6 @@ Problems:
 
 -input 8*6. -> 8*6
 
-input .. -> .. (there should be only one period) fixed, checked for operator in second conditional
+-input .. -> .. (there should be only one period) fixed, checked for 
+operator in second conditional, also you need to escape periods in regex,
+who knew?
