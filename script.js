@@ -95,8 +95,8 @@ divi.addEventListener('click', ()=>{
     updateScreen(screenMessage);
 });
 equals.addEventListener('click', ()=> {
-    evaluate();
-    updateScreen(screenMessage);
+    let err= evaluate();
+    if(!err) updateScreen(screenMessage);
 });
 clear.addEventListener('click', ()=>{
     clearAll();
@@ -144,13 +144,14 @@ function operatorProcess(op){
     }
 }
 
+//Evaluates the values in 
 function evaluate(){
     if(number2 !==''){
         let res= operate(operator, number1, number2);
         if (res === ERROR_MSG) {
-            //CONTINUE HERE//
             clearAll();
             updateScreen(ERROR_MSG);
+            return 1;
         }
         number1=res, number2='', operator=null;
         screenMessage=number1;
@@ -188,8 +189,13 @@ function divide(num1, num2){
 function operate(op, num1, num2){
     if (op===null) return ERROR_MSG;
 
-    if (op === '+') return add(num1, num2);
-    if (op === '-') return subtract(num1, num2);
-    if (op === '*') return multiply(num1, num2);
-    if (op === '/') return divide(num1, num2);
+    let temp=0;
+
+    if (op === '+') temp= add(num1, num2);
+    if (op === '-') temp= subtract(num1, num2);
+    if (op === '*') temp= multiply(num1, num2);
+    if (op === '/') temp= divide(num1, num2);
+
+    if (temp===ERROR_MSG) return ERROR_MSG;
+    return (+temp).toFixed(5);
 }

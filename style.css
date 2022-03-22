@@ -32,3 +32,13 @@ body{
 #buttonCont button{
     display:block;
 }
+
+#equals{
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+
+.op{
+    background-color: #b1b1b1;
+}
