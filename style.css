@@ -10,7 +10,14 @@ body{
 
 #calc{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     flex: 0 1 50%;
+}
+
+#screen{
+    height: 20px;
+    width: 150px;
 }
 
 #buttonCont{
